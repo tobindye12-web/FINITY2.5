@@ -1,0 +1,32 @@
+name: Build FINITY 2.5 for Windows
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - name: Check out FINITY
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build Windows installer
+        run: npm run dist
+
+      - name: Upload FINITY installer
+        uses: actions/upload-artifact@v4
+        with:
+          name: FINITY-2.5-Installer
+          path: dist/*.exe
+          if-no-files-found: error
