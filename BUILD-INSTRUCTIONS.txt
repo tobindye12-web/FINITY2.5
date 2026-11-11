@@ -1,0 +1,9 @@
+FINITY 2.5 — Windows build
+
+1. Upload the contents of this project folder to your GitHub repository (including the hidden .github folder).
+2. If GitHub does not upload the workflow automatically, create .github/workflows/build-windows.yml and use the workflow from the project ZIP.
+3. Open the Actions tab and run “Build FINITY for Windows”.
+4. When the run succeeds, open its Summary and download the FINITY-2.5-Windows-Installer artifact.
+5. Extract the downloaded artifact ZIP and run the FINITY installer .exe.
+
+The typewriter sound toggle is optional and starts OFF. No AI service or API key is included.

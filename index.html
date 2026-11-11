@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#090b16"><title>FINITY</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="app-shell">
+  <aside class="sidebar">
+    <button class="brand" id="homeBtn" title="FINITY home"><span class="brand-glyph">F</span></button>
+    <div class="side-rule"></div>
+    <button class="side-button active" id="sideHome" title="Home"><span>⌂</span></button>
+    <button class="side-button" id="musicBtn" title="YouTube Music"><span>♫</span></button>
+    <button class="side-button keyboard-sound-toggle" id="keyboardSoundToggle" title="Typewriter sounds: off" aria-pressed="false"><span>⌨</span></button>
+    <div class="side-label">YOUR SITES</div>
+    <div id="shortcutRail" class="shortcut-rail"></div>
+    <button class="side-button add-shortcut" id="addShortcut" title="Add website"><span>＋</span></button>
+    <div class="sidebar-spacer"></div>
+    <button class="side-button" id="settingsBtn" title="Settings"><span>⚙</span></button>
+    <div class="sidebar-version">2.5</div>
+  </aside>
+
+  <main class="main-area">
+    <header class="tabbar">
+      <div class="tab-strip" id="tabs"></div>
+      <button class="new-tab" id="newTab" title="New tab">＋</button>
+      <div class="window-controls"><i></i><i></i><i class="close-dot"></i></div>
+    </header>
+    <div class="toolbar">
+      <div class="nav-controls">
+        <button id="back" title="Back">‹</button><button id="forward" title="Forward">›</button><button id="reload" title="Reload">⟳</button><button id="home" title="Home">⌂</button>
+      </div>
+      <form id="addressForm" class="address-bar"><span class="address-shield">◈</span><input id="address" autocomplete="off" spellcheck="false" placeholder="Search Google or enter an address"><button type="submit" aria-label="Go">↵</button></form>
+      <div class="toolbar-tools" aria-label="Music and appearance controls">
+        <div class="music-quick-controls" title="YouTube Music controls">
+          <button class="mini-control" id="musicPrev" title="Previous song" aria-label="Previous song">|◀</button>
+          <button class="mini-control play-control" id="musicPlay" title="Play / pause" aria-label="Play or pause">▶</button>
+          <button class="mini-control" id="musicNext" title="Next song" aria-label="Next song">▶|</button>
+          <button class="mini-control" id="musicMute" title="Mute / unmute" aria-label="Mute or unmute">◖))</button>
+        </div>
+        <button class="toolbar-action" id="themeQuick" title="Toggle theme">◐</button>
+      </div>
+    </div>
+
+    <section id="workspace" class="workspace">
+      <section id="homePage" class="home-page">
+        <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+        <div class="home-content">
+          <div class="hero-brand-wrap" aria-label="FINITY">
+            <div class="orbit orbit-a"></div><div class="orbit orbit-b"></div>
+            <span class="orbit-dot dot-a"></span><span class="orbit-dot dot-b"></span><span class="orbit-dot dot-c"></span>
+            <h1 class="finity-wordmark">FINI<span>TY</span></h1>
+            <div class="wordmark-glow"></div>
+          </div>
+          <p class="hero-caption"><span class="live-dot"></span> YOUR UNIVERSE. YOUR RULES.</p>
+          <form id="homeSearch" class="home-search">
+            <span class="search-symbol">⌕</span><input id="homeQuery" autocomplete="off" spellcheck="false" placeholder="Search the web or enter a URL"><button type="submit">SEARCH <span>↗</span></button>
+          </form>
+          <div class="search-hint">Press <kbd>Enter</kbd> to explore</div>
+          <div class="quick-section">
+            <div class="section-heading"><span>QUICK LAUNCH</span><button id="addQuick" class="text-action">＋ ADD SITE</button></div>
+            <div id="quickLinks" class="quick-links"><div class="empty-shortcuts">Your favorite sites will orbit here.</div></div>
+          </div>
+          <div class="feature-row">
+            <button class="feature-card" id="openMusic"><span class="feature-icon music-icon">♫</span><span><b>Your soundtrack</b><small>Open YouTube Music</small></span><span class="feature-arrow">↗</span></button>
+            <div class="feature-card feature-static"><span class="feature-icon sparkle-icon">✦</span><span><b>Made yours</b><small>Customize your space</small></span><span class="feature-arrow">✧</span></div>
+          </div>
+        </div>
+        <footer class="home-footer"><span>FINITY <b>•</b> VERSION 2.5</span><span id="clock"></span></footer>
+      </section>
+
+      <div id="browserPages" class="browser-pages hidden"></div>
+      <section id="musicPage" class="subpage hidden"><div class="subpage-head"><span class="eyebrow">YOUR SOUNDTRACK</span><h2>YouTube Music</h2><p>Your music, right inside FINITY.</p></div><div class="music-frame"><webview id="musicView" src="https://music.youtube.com/" partition="persist:finity-music" allowpopups></webview></div></section>
+      <section id="settingsPage" class="subpage hidden">
+        <div class="subpage-head"><span class="eyebrow">CONTROL CENTER</span><h2>Make it yours.</h2><p>Tune the look and feel of your corner of the internet.</p></div>
+        <div class="settings-grid">
+          <section class="settings-card"><div><span class="card-kicker">APPEARANCE</span><h3>Choose your atmosphere</h3><p>Pick a theme for FINITY.</p></div><div class="theme-options"><button data-theme="dark" class="theme-choice selected">◐ Midnight</button><button data-theme="light" class="theme-choice">☼ Warm sand</button></div></section>
+          <section class="settings-card"><div><span class="card-kicker">ACCENT COLOR</span><h3>Set the glow</h3><p>Choose your highlight color.</p></div><div class="accent-options"><button data-accent="violet" class="accent-dot violet selected" title="Violet"></button><button data-accent="cyan" class="accent-dot cyan" title="Cyan"></button><button data-accent="pink" class="accent-dot pink" title="Pink"></button><button data-accent="lime" class="accent-dot lime" title="Lime"></button></div></section>
+          <section class="settings-card"><div><span class="card-kicker">QUICK LAUNCH</span><h3>Your favorite websites</h3><p>Add or remove up to seven shortcuts.</p></div><button id="manageShortcuts" class="secondary-btn">Manage shortcuts ↗</button></section>
+          <section class="settings-card"><div><span class="card-kicker">SEARCH</span><h3>Search the web</h3><p>Home search and the address bar use Google search for regular questions.</p></div><span class="status-pill">GOOGLE SEARCH</span></section>
+        </div>
+      </section>
+    </section>
+  </main>
+</div>
+
+
+<div id="welcomeOverlay" class="welcome-overlay hidden" role="dialog" aria-modal="true" aria-labelledby="welcomeTitle">
+  <div class="welcome-card">
+    <div class="welcome-mark">F</div>
+    <span class="eyebrow">WELCOME TO YOUR UNIVERSE</span>
+    <h2 id="welcomeTitle">Make FINITY yours.</h2>
+    <p>Sign into Google to use Google services in FINITY. Your sign-in session is saved on this device, so supported Google sites can remember you next time.</p>
+    <button id="googleSignIn" class="primary-btn welcome-primary">Continue with Google <span>↗</span></button>
+    <button id="skipWelcome" class="welcome-skip">I'll do this later</button>
+    <small>Google Chrome Sync for Chrome bookmarks, passwords, and settings is not included.</small>
+  </div>
+</div>
+
+<div id="modal" class="modal hidden"><div class="modal-card"><button class="modal-close" id="modalClose">×</button><span class="eyebrow">QUICK LAUNCH</span><h2>Add a website</h2><label>Website name<input id="siteName" placeholder="ChatGPT"></label><label>Website address<input id="siteUrl" placeholder="https://chatgpt.com"></label><div class="modal-actions"><button id="cancelModal" class="secondary-btn">Cancel</button><button id="saveShortcut" class="primary-btn">Add to FINITY</button></div><p class="modal-hint" id="modalHint">You can keep up to 7 favorite websites here.</p></div></div>
+<div id="manageModal" class="modal hidden"><div class="modal-card manage-card"><button class="modal-close" id="manageModalClose">×</button><span class="eyebrow">QUICK LAUNCH</span><h2>Manage shortcuts</h2><p class="manage-intro">Remove any saved website. This list includes every shortcut, even if its tile is not currently visible.</p><div id="shortcutManagerList" class="shortcut-manager-list"></div><div class="modal-actions"><button id="manageDone" class="primary-btn">Done</button></div></div></div>
+<script src="renderer.js"></script>
+</body></html>
